@@ -13,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
     }
     let rUser = message.member || message.author || message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!rUser) return errors.cantfindUser(message.channel);
-    let rreason = args.join(" ").slice(2);
+    let rreason = args.join(" ").slice(0);
     if(!rreason) return errors.noReason(message.channel);
 
     let reportEmbed = new Discord.RichEmbed()
