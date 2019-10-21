@@ -1,5 +1,5 @@
 
-const botconfig = require("../botconfig.json");
+const botconfig = require("./botconfig.json");
 
 const tokenfile = require("../token.json");
 
