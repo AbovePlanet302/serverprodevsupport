@@ -11,7 +11,7 @@ const bot = new Discord.Client();
 
 bot.commands = new Discord.Collection();
 
-let coins = require("./coins.json");
+let economy = require("./utils/economy.js")
 
 let xp = require("./xp.json");
 
@@ -67,7 +67,7 @@ bot.on("ready", async () => {
 
 bot.on('message', msg => {
   let {guild} = msg;
-  console.log(guild ? `New message in ${guild.name}` : "new Private message");
+  //console.log(guild ? `New message in ${guild.name}` : "new Private message"); Why?
 })
 
 bot.on("guildCreate", (guild) => {
@@ -150,39 +150,18 @@ bot.on("message", async message => {
 
 
 
-  if(!coins[message.author.id]){
-
-    coins[message.author.id] = {
-
-      coins: 0
-
-    };
-
-  }
-
-
-
   let coinAmt = Math.floor(Math.random() * 15) + 1;
 
   let baseAmt = Math.floor(Math.random() * 15) + 1;
 
-  console.log(`${coinAmt} ; ${baseAmt}`);
+  //console.log(`${coinAmt} ; ${baseAmt}`); This works, we do not need to log it.
 
 
 
   if(coinAmt === baseAmt){
 
-    coins[message.author.id] = {
 
-      coins: coins[message.author.id].coins + coinAmt
-
-    };
-
-  fs.writeFile("./coins.json", JSON.stringify(coins), (err) => {
-
-    if (err) console.log(err)
-
-  });
+    economy.setCoins(message.author.id, economy.getCoins(message.author.id)+coinAmt)
 
   let coinEmbed = new Discord.RichEmbed()
 
@@ -302,4 +281,4 @@ bot.on("message", async message => {
 
 
 
-bot.login(process.env.token);
+bot.login(require('./token.json').token);

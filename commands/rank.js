@@ -1,6 +1,7 @@
 const Discord = require("discord.js");
 let rank = require("../ranks.json");
-let coins = require("../coins.json");
+let economy = require("../utils/economy.js")
+console.log("test");
 
 module.exports.run = async (bot, message, args) => {
   //!coins
@@ -12,7 +13,7 @@ module.exports.run = async (bot, message, args) => {
   }
 
   let uRank = rank[message.author.id].rank;
-  let uCoins = coins[message.author.id].coins;
+  let uCoins = economy.getCoins(message.author.id)
 
 
   let coinEmbed = new Discord.RichEmbed()
