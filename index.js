@@ -1,7 +1,7 @@
 
 const botconfig = require("./botconfig.json");
 
-const tokenfile = require("../token.json");
+const tokenfile = require("./token.json");
 
 const Discord = require("discord.js");
 
@@ -11,9 +11,9 @@ const bot = new Discord.Client();
 
 bot.commands = new Discord.Collection();
 
-let economy = require("../utils/economy.js")
+let economy = require("./utils/economy.js")
 
-let xp = require("../xp.json");
+let xp = require("./xp.json");
 
 let purple = botconfig.purple;
 
