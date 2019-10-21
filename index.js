@@ -281,4 +281,4 @@ bot.on("message", async message => {
 
 
 
-bot.login(require('./token.json').token);
+bot.login(process.env.token);
