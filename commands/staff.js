@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
 
   
 
-  economy.setCoins(message.mentions.users.first().id, "**Helper**");
+  economy.setCoins(message.mentions.users, "**Helper**");
 
   message.channel.send(message.mentions.users.first().username + " is now a Helper.")
 
