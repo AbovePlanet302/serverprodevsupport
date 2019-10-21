@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
 let rank = require("../ranks.json");
-let coins = require("../coins.json");
+let economy = require("../utils/economy.js")
 let xp = require("../xp.json")
 
 
@@ -16,7 +16,7 @@ module.exports.run = async (bot, message, args) => {
   }
 
   let uRank = rank[message.author.id].rank;
-  let uCoins = coins[message.author.id].coins;
+  let uCoins = economy.getCoins(message.author.id)
   let curxp = xp[message.author.id].xp;
   let curlvl = xp[message.author.id].level;
   let nxtLvlXp = curlvl * 300;
