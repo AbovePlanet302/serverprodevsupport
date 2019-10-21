@@ -11,9 +11,9 @@ const bot = new Discord.Client();
 
 bot.commands = new Discord.Collection();
 
-let economy = require("../utils/economy.js")
+let economy = require("./utils/economy.js")
 
-let xp = require("../xp.json");
+let xp = require("./xp.json");
 
 let purple = botconfig.purple;
 
@@ -23,7 +23,7 @@ let cdseconds = 5;
 
 
 
-fs.readdir("../commands/", (err, files) => {
+fs.readdir("./commands/", (err, files) => {
 
 
 
