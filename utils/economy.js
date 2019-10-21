@@ -5,7 +5,7 @@ module.exports = {
 	  }
 	  
 	  let fs = require('fs');
-	  let coins = JSON.parse(fs.readFileSync('../coins.json', 'UTF8') || '{}');
+	  let coins = JSON.parse(fs.readFileSync('./coins.json', 'UTF8') || '{}');
 	  
 
 	  if(!coins[userID]){
@@ -38,7 +38,6 @@ module.exports = {
 			  });
 		}
 		
-		console.log(coins)
 		return coins[userID].coins;
 	}
   };
