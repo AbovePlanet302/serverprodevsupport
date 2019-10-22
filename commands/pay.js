@@ -15,7 +15,7 @@ module.exports.run = async (bot, message, args) => {
 
 
 
-
+  if(isNaN(amount)) return message.reply("You did not enter an amount to pay.")
   if(amount <= 0) return message.reply("You need to pay atleast 1 coin.")
   if(userCoins < amount) return message.reply("you do not have enough coins.");
   
