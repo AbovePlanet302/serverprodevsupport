@@ -1,1 +1,4 @@
-# Server Pro
+Crystal Bot
+===
+
+A cool Discord bot!
