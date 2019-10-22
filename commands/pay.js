@@ -17,7 +17,7 @@ module.exports.run = async (bot, message, args) => {
 
 
   if(amount <= 0) return message.reply("You need to pay atleast 1 coin.")
-  if(userCoins < amount) return message.reply("You do not have enough coins.");
+  if(userCoins < amount) return message.reply("you do not have enough coins.");
   
   economy.setCoins(recipitant.id, recipitantCoins+amount)
   economy.setCoins(message.author.id, userCoins-amount)
