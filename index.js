@@ -1,4 +1,4 @@
-const devMode = true;
+const devMode = false;
 
 const botconfig = require("./botconfig.json");
 
