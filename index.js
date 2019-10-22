@@ -1,3 +1,4 @@
+const devMode = true;
 
 const botconfig = require("./botconfig.json");
 
@@ -280,5 +281,8 @@ bot.on("message", async message => {
 });
 
 
-
-bot.login(process.env.token);
+if(devMode) {
+  bot.login(require("./token.json").token);
+} else {
+  bot.login(process.env.token);
+}
