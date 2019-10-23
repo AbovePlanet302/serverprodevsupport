@@ -54,60 +54,10 @@ fs.readdir("./commands/", (err, files) => {
 
 });
 
-bot.on("ready", async () => {
-  let embed = new Discord.RichEmbed()
-  
-  .setColor(0xffffff)
-  .setTitle("Bot Online")
-  .setTimestamp()
-
-
-
-  bot.channels.get("635578627978821672").send(embed);
-});
-
 bot.on('message', msg => {
   let {guild} = msg;
   //console.log(guild ? `New message in ${guild.name}` : "new Private message"); Why?
 })
-
-bot.on("guildCreate", (guild) => {
-  let embed = new Discord.RichEmbed()
-  .setColor(0xffffff)
-  .setTitle("New Server Join")
-  .setTimestamp()
-  .addField("Server Owner", guild.owner.user.username)
-  .addField("Name", guild.name)
-  .addField("ID", guild.id);
-
-  bot.channels.get("635578704499572736").send(embed);
-});
-
-bot.on("guildMemberAdd", (guild) => {
-  let embed = new Discord.RichEmbed()
-  .setColor(0xffffff)
-  .setTitle("New Member Join")
-  .setTimestamp()
-  .addField("Server Owner", guild.owner.user.name)
-  .addField("Name", guild.name)
-  .addField("ID", guild.id);
-
-  bot.channels.get("635578704499572736").send(embed);
-});
-
-bot.on("guildDelete", (guild) => {
-  let embed = new Discord.RichEmbed()
-  
-  .setColor(0xffffff)
-  .setTitle("Server Removed")
-  .setTimestamp()
-  .addField("Server Owner", guild.owner.user.username)
-  .addField("Name", guild.name)
-  .addField("ID", guild.id);
-
-
-  bot.channels.get("635578704499572736").send(embed);
-});
 
 
 
