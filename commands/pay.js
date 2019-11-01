@@ -20,9 +20,11 @@ module.exports.run = async (bot, message, args) => {
   if(userCoins < amount) return message.reply("you do not have enough coins.");
   
   economy.setCoins(recipitant.id, recipitantCoins+amount)
-  economy.setCoins(message.author.id, userCoins-amount)
-
-  message.channel.send(`<@${message.author.id}> payed <@${recipitant.id}> ${amount} coins.`)
+  setTimeout(function(){
+    economy.setCoins(message.author.id, userCoins-amount)
+    message.channel.send(`<@${message.author.id}> payed <@${recipitant.id}> ${amount} coins.`)
+  }, 2000)
+  
 
 }
 
