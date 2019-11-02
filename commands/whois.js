@@ -67,11 +67,6 @@ module.exports = {
             .addBlankField()
 
 
-        if (member.user.presence.game) 
-
-            embed.addField('**Currently playing**', `**> Name:** ${member.user.presence.game.name}`);
-
-
 
         message.channel.send(embed);
 
