@@ -3,7 +3,6 @@ const Discord = require("discord.js");
 
 module.exports.run = async (bot, message, args) => {
     };
-  }
 
   let coinEmbed = new Discord.RichEmbed()
   .setTitle("User Information:")
