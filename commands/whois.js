@@ -49,20 +49,17 @@ module.exports = {
 
 
 
-            .addField('**Member information:**', `**> Display name:** ${member.displayName}
+            .addField('**User Information:**', `${member.displayName}
 
-            **> Joined at:** ${joined}
-
-            **> Roles:** ${roles}`, true)
+            **> Name: ** ${member.displayName}
+            **> ID: ** ${member.user.id}
+            **> Joined At: ** ${joined}
+            **> Fruor Ranks** ${roles}`, true)
             .addBlankField()
 
-            .addField('**User information:**', `**> ID:** ${member.user.id}
+            .addField('**Group Information:**', `**> ID:** ${member.user.id}
 
-            **> Username**: ${member.user.username}
-
-            **> Tag**: ${member.user.tag}
-
-            **> Created at**: ${created}`, true)
+            **> Fruor**: ${roles},true)
 
             
 
@@ -83,5 +80,5 @@ module.exports = {
 }
 
 module.exports.help = {
-    name: "whois",
+    name: "info",
 }
