@@ -6,7 +6,7 @@ module.exports.run = async (bot, message, args) => {
   }
 
   let coinEmbed = new Discord.RichEmbed()
-  .setTitle("User Information: ", message.author.username)
+  .setTitle("User Information:")
   .setColor(random)
   .addField("Name: ", uRank )
   .addField("User ID: ", message.author.id)
