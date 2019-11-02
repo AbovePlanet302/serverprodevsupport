@@ -62,9 +62,6 @@ module.exports = {
             **> Fruor**: ${roles},true)
             .setTimestamp()
             .addBlankField()
-
-
-
         message.channel.send(embed);
 
 
