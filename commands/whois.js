@@ -60,9 +60,6 @@ module.exports = {
             .addField('**Group Information:**', `**> ID:** ${member.user.id}
 
             **> Fruor**: ${roles},true)
-
-            
-
             .setTimestamp()
             .addBlankField()
 
